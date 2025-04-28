@@ -1,0 +1,3 @@
+TicTacToe:
+    GameStart args: a single pointer to an integer, the size of the board
+    Move format: "i", where (i%L,i/L) is coordinate of the square that was just placed. Squares are ordered from top left to bottom right.

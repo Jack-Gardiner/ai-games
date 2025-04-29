@@ -9,9 +9,10 @@
 /// human player for TTT.
 /// maybe make some diagrams.
 /// pull abstract stuff from TTT game.
+// put try/catch around bots in referee.
 int main(){
     std::cout << "HI\n";
-    
+    std::cout << __cplusplus << "\n";
     Player* B1 = new TTTHuman(0);
     Player* B2 = new TTTBot(1);
     auto current_game = new TTTGame();

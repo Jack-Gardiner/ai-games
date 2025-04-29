@@ -18,4 +18,8 @@ class State{
     protected:
     //virtual vector<string> get_possible_moves() = 0;
         virtual bool is_valid_move(std::string move) = 0;
+        virtual State* clone(){
+            throw std::runtime_error( "Attempt to clone uncloneable state" );
+            return NULL;
+        };
 };

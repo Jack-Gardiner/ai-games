@@ -1,6 +1,5 @@
 #include <TicTacToeBot.h>
 TTTBot::TTTBot(int num): TTTPlayer(num){
-    cout << "init";
 };
 string TTTBot::introduce(){
     return "Hello, i'm a TTT bot! My player number is ";

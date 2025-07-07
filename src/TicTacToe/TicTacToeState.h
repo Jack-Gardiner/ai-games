@@ -12,6 +12,7 @@ class TicTacToeState : public State{
         bool apply_move(string move);
         void* get_board();
         string display();
+        TicTacToeState *clone();
     protected:
     //virtual vector<string> get_possible_moves() = 0;
         virtual bool is_valid_move(string move);

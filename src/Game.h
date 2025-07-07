@@ -2,6 +2,11 @@
 #include "State.h"
 #include "Player.h"
 #include <vector>
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}; 
 class Game{
     public: 
         std::vector<Player*> players;
@@ -13,7 +18,6 @@ class Game{
         };
         void initialize_players();
         virtual void start_game() = 0;
-        
         virtual bool tick(); // returns true if game is continued.
         
 };

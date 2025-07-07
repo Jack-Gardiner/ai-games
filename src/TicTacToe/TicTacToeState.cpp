@@ -132,3 +132,14 @@ string TicTacToeState::display(){
     }
     return ret;
 }
+TicTacToeState * TicTacToeState::clone(){
+    TicTacToeState *new_state = new TicTacToeState(playerCount,boardSize);
+    new_state->currentTurn = currentTurn;
+    for(int i = 0; i < board.size(); i++){
+        for(int j = 0; j < board[0].size();j++){
+            new_state->board[i][j] = board[i][j];
+            
+        }
+    }  
+    return new_state;
+}

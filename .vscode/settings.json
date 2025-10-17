@@ -70,6 +70,9 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "bitset": "cpp",
+        "forward_list": "cpp",
+        "queue": "cpp"
     }
 }

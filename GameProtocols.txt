@@ -1,3 +1,10 @@
 TicTacToe:
     GameStart args: a single pointer to an integer, the size of the board
     Move format: "i", where (i%L,i/L) is coordinate of the square that was just placed. Squares are ordered from top left to bottom right.
+
+
+Chess:
+    GameStart args: none
+    Move format: "x1 y1 x2 y2 p", where a piece is moved from square (x1,y1) to square (x2,y2).
+        If a promotion occurs, the pawn is promoted to piece p, where k = knight, b = bishop, q = queen, and r = rook.
+        

@@ -17,6 +17,5 @@ string TTTBot::get_move(){
     } else{
         return "0";
     }
-    // do MiniMax
     
 };

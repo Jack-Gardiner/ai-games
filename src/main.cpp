@@ -4,13 +4,18 @@
 #include "TicTacToe/TicTacToeHuman.h"
 #include "TicTacToe/TicTacToeMinimax.h"
 
-/// TODO:=
-/// A* move logic for TTT. DONE!
-/// human player for TTT. DONE!
+/// TODO:
 /// maybe make some diagrams. (fuck nooo)
 /// pull abstract stuff from TTT game.
 // put try/catch around bots in referee.
 // seperate headers and .cpp
+
+// CHESS:
+// write move sets for pieces
+// combine into a "get moves" function, taking into account current board
+// three types of moves, sliding, jumping and pawns.
+// determine check/promotion/enpassant
+
 int main(){
     std::cout << "HI\n";
     std::cout << __cplusplus << "\n";

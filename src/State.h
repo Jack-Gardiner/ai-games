@@ -11,8 +11,8 @@ class State{
         virtual bool has_won(int playerNum) = 0;
         // Returns the number of the player that has won, returns -1 for a draw, and -2 for an ongoing game.
         virtual int game_result();
-        virtual bool apply_move(std::string move) = 0;
-        virtual void* get_board() = 0;
+        virtual bool apply_move(std::string move) = 0; // returns true/false if the move was succesful.
+        virtual void* get_board() = 0; // used for players to get the current public board state.
         virtual std::string display();
         void print();
         virtual State* clone(){

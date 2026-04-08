@@ -1,4 +1,4 @@
-#pragma once
+
 #include "constants.h"
 class SplendorState : public State{
     public:
@@ -14,12 +14,11 @@ class SplendorState : public State{
         vector<int> playerPoints;
         vector<vector<devCard>> deckCards;
         virtual bool has_won(int playerNum);
-        int game_result();
         bool apply_move(std::string move);
         void* get_board();
         std::string display();
         void print();
         SplendorState* clone();
     protected:
-        virtual bool is_valid_move(std::string move) = 0;
+        virtual bool is_valid_move(std::string move);
 };

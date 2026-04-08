@@ -3,36 +3,27 @@
 #include <iostream>
 #include <vector>
 #include <string>
-vector<string> split(string input, string splitter){
-    vector<string> ret = vector<string>();
-    string inputc = input;
-    while(inputc.size() > 0){
-        string val = ""; 
-        if (inputc.find(splitter) == string::npos){
-            val = inputc;
-            break;
-        }else{
-            val = inputc.substr(0,inputc.find(splitter));
-            inputc.erase(0,inputc.find(splitter));
-        }
-        ret.push_back(val);
-    }
-    return ret;
+#include <type_traits>
+#pragma once
+std::vector<std::string> split(std::string input, std::string splitter);
+std::vector<int> splitint(std::string input, std::string splitter);
+/*
+template<class T>
+T vcopy(T vec);
+template<class T>
+std::vector<T> vcopy(std::vector<T> vec);
+*/
+
+template<class T>
+T vcopy(T vec){
+    static_assert(std::is_copy_constructible_v<T>);
+    return *(new T(vec));
 }
-vector<int> splitint(string input, string splitter){
-    vector<int> ret = vector<int>();
-    string inputc = input;
-    while(inputc.size() > 0){
-        int val = 0; 
-        if (inputc.find(splitter) == string::npos){
-            val = atoi(inputc.c_str());
-            
-        }else{
-            val = atoi(inputc.substr(0,inputc.find(splitter)).c_str());
-            inputc.erase(0,inputc.find(splitter));
-        }
-        ret.push_back(val);
-        
+template<class T>
+std::vector<T> vcopy(std::vector<T> vec){
+    std::vector<T> ret = std::vector<T>();
+    for(int i = 0; i < vec.size();i++){
+        ret.push_back(vcopy<T>(vec[i]));
     }
     return ret;
 }

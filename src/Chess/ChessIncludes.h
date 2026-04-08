@@ -19,10 +19,5 @@ enum Piece {
   BLACK_ROOK,
   BLACK_PAWN
 }; 
-vector<Piece> get_initial_board(){
-
-}  
-set<Move> get_possible_moves(vector<Piece>board , int square){
-    set<Move> ret;
-    ret.
-}
+vector<Piece> get_initial_board();
+set<Move> get_possible_moves(vector<Piece>board , int square);

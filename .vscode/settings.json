@@ -73,6 +73,7 @@
         "variant": "cpp",
         "bitset": "cpp",
         "forward_list": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "source_location": "cpp"
     }
 }

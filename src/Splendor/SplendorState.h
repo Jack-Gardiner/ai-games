@@ -3,6 +3,7 @@
 class SplendorState : public State{
     public:
         SplendorState(int playerCount);
+        SplendorState(const SplendorState& other);
         vector<vector<devCard>> shopCards;
         vector<noble> unclaimedNobles;
         vector<vector<devCard>> playerAssets;

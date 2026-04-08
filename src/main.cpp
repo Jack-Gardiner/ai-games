@@ -9,7 +9,6 @@
 #include "Splendor/SplendorPlayer.h"
 #include "Splendor/SplendorState.h"
 /// TODO:
-/// maybe make some diagrams. (fuck nooo)
 /// pull abstract stuff from TTT game.
 // put try/catch around bots in referee.
 // seperate headers and .cpp
@@ -20,6 +19,9 @@
 // three types of moves, sliding, jumping and pawns.
 // determine check/promotion/enpassant
 
+// SPLENDOR:
+// finish debugging apply_move (need to debug all move types) done t
+// write clone and get__board
 int main(){
     
     std::cout << "HI\n";
@@ -48,10 +50,26 @@ int main(){
     // t <list of gems to take from stockpile> <list of gems to discard> <noble choice>?
     
     string next_move = "t 1,1,1,0,0,0 0,0,0,0,0,0";
-    cout << "Applying move!" << endl;
+    cout << "Applying move 1!" << endl;
     testState->apply_move(next_move);
-    cout << testState->display() << endl;
-    cout << testState->game_result() << endl;
+    
+    cout <<"current state:" << endl << testState->display() << endl;
+    cout << "Game result:" << endl << testState->game_result() << endl;
+    next_move = "t 0,0,2,0,0,0 0,0,0,0,0,0";
+    cout << "Applying move 2!" << endl;
+    testState->apply_move(next_move);
+    cout <<"current state:" << endl << testState->display() << endl;
+    cout <<"Game result:" << endl << testState->game_result() << endl;
+    next_move = "t 0,0,0,1,1,1 1,1,0,0,0,0";
+    cout << "Applying move 3!" << endl;
+    testState->apply_move(next_move);
+    cout <<"current state:" << endl << testState->display() << endl;
+    cout <<"Game result:" << endl << testState->game_result() << endl;
+    next_move = "t 1,1,1,0,0,0 0,0,0,0,0,0";
+    cout << "Applying move 4!" << endl;
+    testState->apply_move(next_move);
+    cout <<"current state:" << endl << testState->display() << endl;
+    cout <<"Game result:" << endl << testState->game_result() << endl;
     //Currently working on testing apply_move. after this, get_board needs to be written, maybe after player classes.
     
     /*

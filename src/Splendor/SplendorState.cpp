@@ -51,6 +51,22 @@ SplendorState::SplendorState(int playerCount) : State(playerCount){
         playerPoints.push_back(0);
     }
 }
+SplendorState::SplendorState(const SplendorState& other) : State(other.playerCount){
+    
+    SplendorState *ret = new SplendorState(playerCount);
+    ret-> shopCards = vcopy(shopCards); // IMPLEMENT devcard copy compatability with vcopy
+    // replace copy functions with copy constructors.
+    ret->unclaimedNobles = vcopy(unclaimedNobles);
+    ret->playerAssets = vcopy(playerAssets);
+    ret->playerReserves = vcopy(playerReserves);
+    ret->playerNobles = vcopy(playerNobles);
+    ret->playerBalance = vcopy(playerBalance);
+    ret->playerDiscounts = vcopy(playerDiscounts);
+    ret->shopGems = vcopy(shopGems);
+    ret->playerPoints = vcopy(playerPoints);
+    ret->deckCards = vcopy(deckCards);
+    return ret;
+}
 bool SplendorState::has_won(int playerNum){
     return playerPoints[playerNum] >= pointsToWin;
 }
@@ -329,6 +345,7 @@ bool SplendorState::apply_move(std::string move){
             }
         }
     }
+    currentTurn = (currentTurn + 1) % playerCount;
     return true;
 }
 // TODO: display (done), get_board, and clone.
@@ -372,6 +389,11 @@ std::string SplendorState::display(){
     
     
     ret.append("Current Shop: --------------- \n");
+    ret += "shop gems: ";
+    for(int i = 0; i < shopGems.size(); i++){
+        ret += std::to_string(shopGems[i]) + ",";
+    }
+    ret += "\n";
     for(int i = 0; i < shopCards.size();i++){
         ret +=  "shop " + std::to_string(i) + ":\n";
         
